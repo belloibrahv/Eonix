@@ -1,5 +1,4 @@
 from rest_framework import generics
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from ..models import Career
 from ..serializers import CareerSerializer
 from ..permissions import IsAdminOrReadOnly
@@ -10,7 +9,7 @@ class CareerListCreateView(generics.ListCreateAPIView):
     permission_classes = [IsAdminOrReadOnly]
 
 
-class CareerDetailView(generics.RetrieveUpdateDestroyAPIView):
+class CareerDetailView(generics.RetrieveUpdateAPIView):
     queryset = Career.objects.all()
     serializer_class = CareerSerializer
     permission_classes = [IsAdminOrReadOnly]

@@ -1,2 +1,2 @@
-from .user import UserLoginView, UserRegistrationView, LogoutView
+from .user import UserLoginView, UserRegistrationView
 from .career import CareerListCreateView, CareerDetailView
