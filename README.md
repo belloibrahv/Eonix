@@ -1,48 +1,56 @@
-# Eonix Backend
+# **Eonix Backend**
 
-Learning Platform for Career Development and Skill Enhancement
+A platform for career exploration and development through personalized learning paths.
 
-## Features
+## **Project Overview**
 
-* Profession Selection with details on demand, remote work possibilities, and required skills
-* Personalized Learning Paths with structured topics and subtopics
-* Study Resources and Assessments for each topic
-* Randomized assessment questions and answers
-* User Progress and Assessment Result Tracking
+Eonix provides a backend system for managing careers, courses, and learning paths, enabling users to explore various career options and track their progress. The platform is designed to be fully backend-focused with APIs for career management.
 
-## Technical Specifications
+## **Core Features**
 
-* Backend Framework: Django, Django Rest Framework
-* Database: MySQL (default Django setup, to be migrated to PostgreSQL)
-* Architecture: Monolithic
+- **Career Exploration**: Users can explore career options with detailed descriptions.
+- **Admin Control**: Admins can create and update careers, while all users can view them.
+- **Learning Paths and Topics**: Structured paths for learning, linking courses and topics (planned feature).
+- **User Progress Tracking**: Track learning progress for registered users (planned feature).
 
-## Getting Started
+## **Technical Specifications**
 
-1. Clone the repository:
+- **Backend Framework**: Django, Django Rest Framework (DRF)
+- **Database**: SQLite (default setup, potential migration to PostgreSQL)
+- **Architecture**: Monolithic structure
+
+## **Getting Started**
+
+1. **Clone the repository**:
    ```bash
    git clone https://github.com/belloibrahv/Eonix.git
    ```
-2. Navigate to the project directory:
+
+2. **Navigate to the project directory**:
    ```bash
    cd Eonix
    ```
-3. Install dependencies:
+
+3. **Install dependencies**:
    ```bash
    pipenv install
    ```
-4. Apply database migrations:
+
+4. **Apply database migrations**:
    ```bash
    python manage.py migrate
    ```
-5. Create a superuser:
+
+5. **Create a superuser**:
    ```bash
    python manage.py createsuperuser
    ```
-6. Run the development server:
+
+6. **Run the development server**:
    ```bash
    python manage.py runserver
    ```
 
-## License
+## **License**
 
-Eonix is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+Eonix is licensed under the MIT License. See [LICENSE](LICENSE) for more details.
