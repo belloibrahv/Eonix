@@ -1,56 +1,56 @@
-# **Eonix Backend**
+# Eonix
 
-A platform for career exploration and development through personalized learning paths.
+## Description
+Eonix is a career exploration and learning platform designed to make career guidance accessible to everyone. The platform enables users to browse various career paths, select relevant courses, access high-quality resources, and take assessments to test their knowledge. The backend is built with Django and Django Rest Framework (DRF), with a focus on API usability for both mobile and web applications.
 
-## **Project Overview**
+## Why? (Motivation/Goal/Problem to solve)
+The motivation behind Eonix stems from the lack of centralized and accessible career information, especially for individuals looking to enter or transition within different industries. Many people struggle with finding relevant career resources or understanding which skills are necessary for a specific career path. Eonix solves this by offering curated paths, courses, and assessments to guide users on their career journey.
 
-Eonix provides a backend system for managing careers, courses, and learning paths, enabling users to explore various career options and track their progress. The platform is designed to be fully backend-focused with APIs for career management.
+## Quick Start
+To get Eonix running on your local machine, follow these steps:
 
-## **Core Features**
-
-- **Career Exploration**: Users can explore career options with detailed descriptions.
-- **Admin Control**: Admins can create and update careers, while all users can view them.
-- **Learning Paths and Topics**: Structured paths for learning, linking courses and topics (planned feature).
-- **User Progress Tracking**: Track learning progress for registered users (planned feature).
-
-## **Technical Specifications**
-
-- **Backend Framework**: Django, Django Rest Framework (DRF)
-- **Database**: SQLite (default setup, potential migration to PostgreSQL)
-- **Architecture**: Monolithic structure
-
-## **Getting Started**
-
-1. **Clone the repository**:
+1. Clone the repository:
    ```bash
-   git clone https://github.com/belloibrahv/Eonix.git
-   ```
-
-2. **Navigate to the project directory**:
-   ```bash
+   git clone https://github.com/belloibrahv/Eonix
    cd Eonix
    ```
 
-3. **Install dependencies**:
+2. Set up a virtual environment:
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
+
+3. Install dependencies:
    ```bash
    pipenv install
    ```
 
-4. **Apply database migrations**:
+4. Apply database migrations
    ```bash
+   python manage.py makemigrations
    python manage.py migrate
    ```
 
-5. **Create a superuser**:
-   ```bash
-   python manage.py createsuperuser
-   ```
-
-6. **Run the development server**:
+5. Run the application:
    ```bash
    python manage.py runserver
    ```
 
-## **License**
+## Usage
+The primary functionalities include:
 
-Eonix is licensed under the MIT License. See [LICENSE](LICENSE) for more details.
+- **Browse Career Paths:** Users can explore various career paths and see the skills and courses recommended for each path.
+- **Course Selection:** Users can enroll in courses relevant to their chosen career paths.
+- **Assessments:** Users can take assessments to evaluate their progress and knowledge.
+- **Filtering:** Filter courses or topic based on completion status (completed, incomplete, all).
+
+API Endpoints:
+- `/api/careers/`: Get a list of career paths.
+- `/api/courses/`: List courses and filter by completion status.
+  - `/api/courses/?query=completed`: Get completed courses.
+  - `/api/courses/?query=in-complete`: Get incomplete courses.
+  - `/api/courses/?query=all`: Get all courses.
+
+## Contributing
+Contributions are welcome! Please fork the repository and submit a pull request with your changes. Make sure to follow the contribution guidelines listed in the `CONTRIBUTING.md` file.
