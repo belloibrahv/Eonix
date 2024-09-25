@@ -3,6 +3,10 @@ from ..models.course import Course
 
 
 class CourseSerializer(serializers.ModelSerializer):
+    """
+    Serializer for the Course model. Handles validation and ensures
+    that titles are unique.
+    """
     class Meta:
         model = Course
         fields = ['id', 'title', 'description', 'completed', 'career', 'created_at', 'updated_at']
