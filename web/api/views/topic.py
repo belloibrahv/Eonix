@@ -1,17 +1,16 @@
 from rest_framework import generics
 from rest_framework.exceptions import ValidationError
-from ..models import Course
-from ..serializers import CourseSerializer
+from ..models import Topic
+from ..serializers import TopicSerializer
 from ..permissions import IsAdminOrReadOnly
 
-
-class CourseListCreateView(generics.ListCreateAPIView):
+class TopicListCreateView(generics.ListCreateAPIView):
     """
-    Handles listing all courses and creating a new course.
-    Only admin users can create courses.
+    Handles listing all topics and creating a new topic.
+    Only admin users can create topics.
     """
-    queryset = Course.objects.all()
-    serializer_class = CourseSerializer
+    queryset = Topic.objects.all()
+    serializer_class = TopicSerializer
     permission_classes = [IsAdminOrReadOnly]
     
     def get_queryset(self):
@@ -33,21 +32,20 @@ class CourseListCreateView(generics.ListCreateAPIView):
         if status not in status_filter:
             raise ValidationError(f"Invalid value for 'status': {status}. Valid options are 'completed', 'incomplete', or 'all'.")
             
-        return Course.objects.filter(**status_filter[status])
-    
-        
+        return Topic.objects.filter(**status_filter[status])
 
-class CourseDetailsView(generics.RetrieveUpdateAPIView):
+
+class TopicDetailsView(generics.RetrieveUpdateAPIView):
     """
-    Handles retrieving a specific course by its ID and updating it.
-    Only admin users can update courses.
+    Handles retrieving a specific topic by its ID and updating it.
+    Only admin users can update topics.
     """
-    queryset = Course.objects.all()
-    serializer_class = CourseSerializer
+    queryset = Topic.objects.all()
+    serializer_class = TopicSerializer
     permission_classes = [IsAdminOrReadOnly]
     lookup_field = 'id'
     
-    def perform_update(self, serializer):
+    def action(self):
         if self.request.user.is_staff:
             serializer.save()
     
