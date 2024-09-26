@@ -48,9 +48,14 @@ The primary functionalities include:
 API Endpoints:
 - `/api/careers/`: Get a list of career paths.
 - `/api/courses/`: List courses and filter by completion status.
-  - `/api/courses/?query=completed`: Get completed courses.
-  - `/api/courses/?query=in-complete`: Get incomplete courses.
-  - `/api/courses/?query=all`: Get all courses.
+  - `/api/courses/?status=completed`: Get completed courses.
+  - `/api/courses/?status=in-complete`: Get incomplete courses.
+  - `/api/courses/?status=all`: Get all courses.
+- `/api/topics/`: List topics and filter by completion status.
+  - `/api/topics/?status=completed`: Get completed topics.
+  - `/api/topics/?status=in-complete`: Get incomplete topics.
+  - `/api/topics/?status=all`: Get all topics.
+
 
 ## Contributing
 Contributions are welcome! Please fork the repository and submit a pull request with your changes. Make sure to follow the contribution guidelines listed in the `CONTRIBUTING.md` file.
